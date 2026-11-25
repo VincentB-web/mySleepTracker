@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sleep Hours Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div class="moon" aria-hidden="true">☾</div>
+      <p class="eyebrow">SLEEP WELL · LIVE BETTER</p>
+      <h1>Your sleep,<br><span>understood.</span></h1>
+      <p class="intro">Find out whether your sleep duration matches the recommendation for your age.</p>
+    </header>
+
+    <section class="calculator" aria-labelledby="form-title">
+      <h2 id="form-title">Your sleep check</h2>
+      <form id="sleepForm">
+        <label for="age">How old are you?</label>
+        <div class="input-wrap">
+          <input id="age" type="number" min="0" max="120" placeholder="Enter your age" required>
+          <span>years old</span>
+        </div>
+
+        <label for="hours">How many hours do you sleep in 24 hours?</label>
+        <div class="input-wrap">
+          <input id="hours" type="number" min="0" max="24" step="0.25" placeholder="e.g. 8" required>
+          <span>hours</span>
+        </div>
+        <p class="hint">Include naps if you are a child or if you nap during the day.</p>
+        <button type="submit">Check my sleep <span aria-hidden="true">↗</span></button>
+      </form>
+    </section>
+
+    <section id="result" class="result hidden" aria-live="polite">
+      <div class="result-top">
+        <span id="statusTag" class="status-tag">RESULT</span>
+        <h2 id="resultTitle">Your sleep report</h2>
+        <p id="resultText"></p>
+      </div>
+      <div class="stats">
+        <div><span class="stat-label">Your sleep</span><strong id="actual">—</strong></div>
+        <div><span class="stat-label">Recommended</span><strong id="recommended">—</strong></div>
+      </div>
+      <div class="schedule">
+        <h3>A sample sleep schedule</h3>
+        <p>For a consistent <strong id="scheduleHours">8-hour</strong> sleep, try:</p>
+        <div class="schedule-times">
+          <div><span>BEDTIME</span><strong id="bedtime">10:00 PM</strong></div>
+          <div class="arrow">→</div>
+          <div><span>WAKE UP</span><strong id="wakeTime">6:00 AM</strong></div>
+        </div>
+        <p class="hint">Adjust these times to fit your school, work, and daily routine. Try to keep them consistent.</p>
+      </div>
+      <p id="tip" class="tip"></p>
+    </section>
+
+    <footer>
+      <p>Sleep needs vary from person to person. This tool provides general guidance, not a medical diagnosis.</p>
+      <p class="source">Recommendations: <a href="https://www.cdc.gov/sleep/about/" target="_blank" rel="noopener">CDC sleep guidance</a>.</p>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
